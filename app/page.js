@@ -7,9 +7,12 @@ import UsersGrid from "@/components/users/users-grid";
 const GetUsers = async () => {
   try {
     const users = await getUsers();
-    return <UsersGrid meals={users} />;
+    if (users !== undefined) {
+      return <UsersGrid users={users} />;
+    }
   } catch (error) {
     console.log(error, "error");
+    return <p className={loadingstyles.loading}>Failed to load Users.</p>;
   }
 };
 export default function Home() {

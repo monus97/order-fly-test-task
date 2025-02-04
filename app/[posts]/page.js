@@ -6,7 +6,9 @@ import PostsGrid from "@/components/posts/posts";
 const GetPosts = async ({ params }) => {
   try {
     const postsById = await getPostById(params);
-    return <PostsGrid posts={postsById} />;
+    if (postsById !== undefined) {
+      return <PostsGrid posts={postsById} />;
+    }
   } catch (error) {
     console.error("Error fetching posts:", error);
     return <p className={styles.loading}>Failed to load posts.</p>;

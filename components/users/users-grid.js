@@ -5,18 +5,18 @@ import style from "@/components/users/post-grid.module.css";
 import styles from "@/app/page.module.css";
 import MealItem from "./user-items";
 
-const UsersGrid = ({ meals }) => {
+const UsersGrid = ({ users }) => {
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("name");
   const [sortOrder, setSortOrder] = useState("asc");
 
-  const filteredMeals = meals?.filter(
+  const filteredUsers = users?.filter(
     (meal) =>
       meal.name.toLowerCase().includes(search.toLowerCase()) ||
       meal.email.toLowerCase().includes(search.toLowerCase()) ||
       meal.company?.name.toLowerCase().includes(search.toLowerCase())
   );
-  const sortedMeals = [...filteredMeals]?.sort((a, b) => {
+  const sortedMeals = [...filteredUsers]?.sort((a, b) => {
     let fieldA = sortBy === "name" ? a.name : a.company?.name;
     let fieldB = sortBy === "name" ? b.name : b.company?.name;
 

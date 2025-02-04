@@ -1,4 +1,3 @@
-import Link from "next/link";
 import classes from "../users/post-item.module.css";
 export default function PostItem({ id, userId, title, body }) {
   return (
@@ -11,9 +10,9 @@ export default function PostItem({ id, userId, title, body }) {
       </header>
       <div className={classes.content}>
         <p className={classes.summary}>{body}</p>
-        {/* <div className={classes.actions}>
-          <Link href={`/${id}`}>View Details</Link>
-        </div> */}
+        <div className={classes.actions}>
+          {/* <Link href={`/${id}`}>View Details</Link> */}
+        </div>
       </div>
     </article>
   );
