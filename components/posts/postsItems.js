@@ -11,9 +11,9 @@ export default function PostItem({ id, userId, title, body }) {
       </header>
       <div className={classes.content}>
         <p className={classes.summary}>{body}</p>
-        <div className={classes.actions}>
+        {/* <div className={classes.actions}>
           <Link href={`/${id}`}>View Details</Link>
-        </div>
+        </div> */}
       </div>
     </article>
   );
