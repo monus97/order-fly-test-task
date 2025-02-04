@@ -10,7 +10,9 @@ const MainHeader = () => {
         <Image src={logoimg} alt="logo" />
         Users And His Posts
       </Link>
-      <nav className={styles.nav}></nav>
+      <nav className={styles.nav}>
+        <Navlinks href="/">Users</Navlinks>
+      </nav>
     </header>
   );
 };
